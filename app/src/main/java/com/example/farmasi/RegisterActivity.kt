@@ -75,7 +75,7 @@ class RegisterActivity : AppCompatActivity() {
         val userModel = UserModel(
             Email = email,
             Name = name,
-            Password = null // Tidak menyimpan password di Firestore
+            Password = PasswordHelper.md5(etPassword.text.toString()) 
         )
 
         val db = Firebase.firestore
